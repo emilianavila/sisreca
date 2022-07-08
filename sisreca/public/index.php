@@ -2,7 +2,7 @@
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
-
+/* este es mensaje nuevo*/
 define('LARAVEL_START', microtime(true));
 
 /*

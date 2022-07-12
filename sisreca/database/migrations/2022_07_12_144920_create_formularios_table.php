@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nits', function (Blueprint $table) {
+        Schema::create('formularios', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nro_nit');
-            $table->string('razon_social');
-            $table->string('domicilio_fiscal');
-            $table->string('tipo_nit');
-            $table->string('observacion');
+            $table->string('nro_orden');
+            $table->string('nombre');
+            $table->string('sigla');
             
+            $table->unsignedBigInteger('alicuotas_id');
+            $table->foreign('alicuotas_id')->references('id')->on('alicuotas')->onDelete('cascade');
+                        
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nits');
+        Schema::dropIfExists('formularios');
     }
 };

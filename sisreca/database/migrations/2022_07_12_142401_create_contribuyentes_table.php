@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nits', function (Blueprint $table) {
+        Schema::create('contribuyentes', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nro_nit');
-            $table->string('razon_social');
-            $table->string('domicilio_fiscal');
-            $table->string('tipo_nit');
-            $table->string('observacion');
+            $table->string('tipo_contrib');
             
+            $table->unsignedBigInteger('personas_id');
+            $table->foreign('personas_id')->references('id')->on('personas')->onDelete('cascade');
+            $table->unsignedBigInteger('nits_id');
+            $table->foreign('nits_id')->references('id')->on('nits')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nits');
+        Schema::dropIfExists('contribuyentes');
     }
 };

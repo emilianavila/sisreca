@@ -19,14 +19,14 @@ return new class extends Migration
             $table->string('nombre_bien');
             $table->string('tipo_bien');
             $table->string('area');
-            $table->string('tipo_mueble');
+            $table->string('tipo_inmueble');
             $table->string('cod_catastral');
+            $table->string('mat_folio');
+            $table->float('sup_total',8,2); //metros cuadrados
+            $table->string('direccion');
             $table->string('departamento');
             $table->string('alcaldia');
             $table->string('cod_alcaldia');
-            $table->string('direccion');
-            $table->string('mat_folio');
-            $table->float('sup_total',8,2); //metros cuadrados
                         
             $table->timestamps();
         });

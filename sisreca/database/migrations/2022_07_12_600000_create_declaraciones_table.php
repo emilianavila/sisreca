@@ -18,15 +18,12 @@ return new class extends Migration
 
             $table->string('periodo');
             $table->string('folio');
-            $table->enum('refrendado',[1,2])->default(1);
             $table->string('tipo_transmi');
             $table->date('fecha_transmi');
-
-
+            $table->enum('refrendado',[1,2])->default(1);
+            
             $table->unsignedBigInteger('formularios_id');
-            $table->foreign('formularios_id')->references('id')->on('formularios')->onDelete('cascade');
-            $table->unsignedBigInteger('refrendos_id');
-            $table->foreign('refrendos_id')->references('id')->on('refrendos')->onDelete('cascade');
+            $table->foreign('formularios_id')->references('id')->on('formularios')->onDelete('cascade');//se agrega restricción de llave foránea
             $table->unsignedBigInteger('bien_inmuebles_id');
             $table->foreign('bien_inmuebles_id')->references('id')->on('bien_inmuebles')->onDelete('cascade');
             $table->unsignedBigInteger('otros_bienes_id');

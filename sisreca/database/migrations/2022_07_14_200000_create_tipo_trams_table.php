@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('casilla_impuestos', function (Blueprint $table) {
+        Schema::create('tipo_trams', function (Blueprint $table) {
             $table->id();
 
-            $table->string('descrip_casilla');
-            $table->string('cod_casilla');
-            $table->integer('importe');
+            $table->string('nombre');
             
+            $table->unsignedBigInteger('unidad_orgs_id');
+            $table->foreign('unidad_orgs_id')->references('id')->on('unidad_orgs')->onDelete('cascade');
+        
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('casilla_impuestos');
+        Schema::dropIfExists('tipo_trams');
     }
 };

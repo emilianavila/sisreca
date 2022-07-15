@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('refrendos', function (Blueprint $table) {
+        Schema::create('adjuntos', function (Blueprint $table) {
             $table->id();
-                        
-            $table->integer('cant_timbres');
-            $table->integer('cant_stickers');
-            $table->date('fecha_refrendo');
-            $table->string('observacion');
+
+            $table->string('url');
+            $table->float('tamanio',8,2);
+            $table->date('fecha_reg');
 
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('refrendos');
+        Schema::dropIfExists('adjuntos');
     }
 };

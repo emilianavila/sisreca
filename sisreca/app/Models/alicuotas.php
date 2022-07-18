@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class alicuotas extends Model
 {
     use HasFactory;
+
+    //relación uno a muchos
+    public function formularios()
+    {
+        return $this->hasMany(formularios::class);
+    }
 }

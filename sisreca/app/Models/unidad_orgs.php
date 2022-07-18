@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class unidad_orgs extends Model
 {
     use HasFactory;
+    
+    //relación uno a muchos
+    public function tipo_trams()
+    {
+         return $this->hasMany(tipo_trams::class);
+    }
 }

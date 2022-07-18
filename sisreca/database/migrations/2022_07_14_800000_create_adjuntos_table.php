@@ -20,6 +20,8 @@ return new class extends Migration
             $table->float('tamanio',8,2);
             $table->date('fecha_reg');
 
+            $table->unsignedBigInteger('tramites_id');
+            $table->foreign('tramites_id')->references('id')->on('tramites')->onDelete('cascade');            
             $table->timestamps();
         });
     }

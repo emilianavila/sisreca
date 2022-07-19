@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class solicitud_servis extends Model
+class Casilla_impuesto extends Model
 {
     use HasFactory;
-    
+
     //relación muchos a muchos
-    public function tasas_otros()
+    public function formularios()
     {
-         return $this->belongsToMany(tasas_otros::class);
+         return $this->belongsToMany(Formulario::class);
     }
 }

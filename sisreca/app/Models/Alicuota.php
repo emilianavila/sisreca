@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class refrendos extends Model
+class Alicuota extends Model
 {
     use HasFactory;
 
-    //relación uno a uno
-    public function tramites()
+    //relación uno a muchos
+    public function formularios()
     {
-        return $this->hasOne(tramites::class);
+        return $this->hasMany(Formulario::class);
     }
 }

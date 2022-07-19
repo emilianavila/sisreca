@@ -5,21 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class actuantes extends Model
+class Actuante extends Model
 {
     use HasFactory;
 
     //relación uno a uno inversa
     public function contribuyentes()
     {
-        return $this->belongsTo(contribuyentes::class);
+        return $this->belongsTo(Contribuyente::class);
     }
     //relación uno a muchos inversa
     public function declaraciones()
     {
-         return $this->belongsTo(declaraciones::class);
+         return $this->belongsTo(Declaracion::class);
     }
-
-
-
 }

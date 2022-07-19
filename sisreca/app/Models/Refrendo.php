@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class unidad_orgs extends Model
+class Refrendo extends Model
 {
     use HasFactory;
-    
-    //relación uno a muchos
-    public function tipo_trams()
+
+    //relación uno a uno
+    public function tramites()
     {
-         return $this->hasMany(tipo_trams::class);
+        return $this->hasOne(Tramite::class);
     }
 }

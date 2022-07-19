@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class bien_inmuebles extends Model
+class Adjunto extends Model
 {
     use HasFactory;
-    
-    //relación uno a uno
-    public function declaraciones()
+
+    //relación uno a muchos inversa
+    public function tramites()
     {
-        return $this->hasOne(declaraciones::class);
+        return $this->belongsTo(Tramite::class);
     }
 }

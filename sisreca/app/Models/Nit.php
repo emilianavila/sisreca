@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class nits extends Model
+class Nit extends Model
 {
     use HasFactory;
 
     //relación uno a uno
     public function personas()
     {
-        return $this->hasOne(personas::class);
+        return $this->hasOne(Persona::class);
     }
     //relación uno a uno
     public function contribuyentes()
     {
-        return $this->hasOne(contribuyentes::class);
+        return $this->hasOne(Contribuyente::class);
     }
-
 }

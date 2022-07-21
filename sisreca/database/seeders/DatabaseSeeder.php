@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Actuante;
+use App\Models\Adjunto;
+use App\Models\Tramite;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,5 +23,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call(UserSeeder::class);
+        Actuante::factory(4)->create();
+        Adjunto::factory(4)->create();
+        Tramite::factory(4)->create();
+
     }
 }

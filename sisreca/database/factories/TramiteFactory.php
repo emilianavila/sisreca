@@ -22,11 +22,21 @@ class TramiteFactory extends Factory
      */
     public function definition()
     {
-        $descrip = $this->faker->unique()->sentence();
+        $nro_tram = $this->faker->unique()->sentence(); 
+        $descrip = $this->faker->sentence();
+        $fecha_inicio = $this->faker->sentence();
+        $fecha_fin = $this->faker->sentence();
+
         return [
             //
+            'nro_tram' => $nro_tram,
+            'slug' => Str::slug($nro_tram),
             'descrip' => $descrip,
             'slug' => Str::slug($descrip),
+            'fecha_inicio' => $fecha_inicio,
+            'slug' => Str::slug($fecha_inicio),
+            'fecha_fin' => $fecha_fin,
+            'slug' => Str::slug($fecha_fin),
             'tipo_trams_id' => Tipo_tram::all()->random()->id,
             'contribuyentes_id' => Contribuyente::all()->random()->id,
             'declaraciones_id' => Declaracion::all()->random()->id,
